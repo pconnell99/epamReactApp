@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import { IncrementValue } from './IncrementValue'
+import React from 'react';
+import SearchBar from './SearchBar';
+import GenreToggle from './GenreToggle';
 
 function App() {
+  let genres = ["All", "Documentary", "Comedy", "Horror", "Crime"];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {React.createElement("div", {}, "Hello World!")}
+      <br />
+      <IncrementValue />
+      <br />
+      <SearchBar />
+      <br />
+      <GenreToggle genres={genres} onGenreSelected={(genre) => { alert(genre) }} />
     </div>
   );
 }

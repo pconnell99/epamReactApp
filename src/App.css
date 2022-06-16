@@ -1,38 +1,50 @@
 .App {
   text-align: center;
+  background-color: #232323;
+  height: 100vh;
+  color: #ffffff;
+  font-size: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .button {
+  color: #ffffff;
+  background-color: #f65261;
+  border: 0;
+  border-radius: 3px;
+  text-transform: uppercase;
+  padding: 8px 30px 8px 30px;
+  min-width: 50px;
+  max-width: 250px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App .searchbar {
+  color: #666666;
+  border: 0;
+  border-radius: 3px;
+  padding: 8px 30px 8px 30px;
+  min-width: 50px;
+  max-width: 250px;
+  background-color: #232323;
+  width: 75%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App .searchbar:focus {
+  outline: none;
+  color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+.App .genreChoices {
+  display: inline-flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .genreItem {
+  margin: 10px;
+  text-transform: uppercase;
+  border-bottom: 1px solid gray;
+  cursor: pointer;
+}
+
+.App .genreItem.selected {
+  border-bottom: 1px solid red;
 }
