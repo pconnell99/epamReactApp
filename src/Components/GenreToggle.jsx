@@ -42,6 +42,6 @@ export default function GenreToggle(props) {
 }
 
 GenreToggle.propTypes = {
-	genres: PropTypes.string.isRequired,
+	genres: PropTypes.array.isRequired,
 	onGenreSelected: PropTypes.func.isRequired,
 };

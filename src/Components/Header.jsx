@@ -28,7 +28,7 @@ const SearchBarContainer = styled.div`
 	width: 75%;
 `;
 
-export function Header(props) {
+export default function Header(props) {
 	return (
 		<HeaderComponent>
 			<>
@@ -39,13 +39,12 @@ export function Header(props) {
 			</>
 			<SearchBarContainer>
 				<HeaderText>Find Your Movie</HeaderText>
-				<SearchBar />
+				<SearchBar onSearch={props.onSearch}/>
 			</SearchBarContainer>
 		</HeaderComponent>
 	);
 }
 
 Header.propTypes = {
-	// genres: PropTypes.string.isRequired,
-	// onGenreSelected: PropTypes.func.isRequired,
+	onSearch: PropTypes.func.isRequired,
 };

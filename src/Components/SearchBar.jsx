@@ -38,6 +38,11 @@ export default function SearchBar(props) {
 		setSearchTerm(event.target.value);
 	};
 
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		props.onSearch(searchTerm);
+	};
+
 	return (
 		<SearchBarContainer>
 			<SearchbarComponent
@@ -47,7 +52,13 @@ export default function SearchBar(props) {
 				placeholder="What do you want to watch?"
 			/>
 			&nbsp;
-			<SearchButtonComponent>Search</SearchButtonComponent>
+			<SearchButtonComponent onClick={handleSubmit}>
+				Search
+			</SearchButtonComponent>
 		</SearchBarContainer>
 	);
 }
+
+SearchBar.propTypes = {
+	onSearch: PropTypes.func.isRequired,
+};
