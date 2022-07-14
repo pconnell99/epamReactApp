@@ -1,24 +1,23 @@
-import "./App.css";
-import { IncrementValue } from "./IncrementValue";
 import React from "react";
-import SearchBar from "./SearchBar";
-import GenreToggle from "./GenreToggle";
+import GlobalStyle from "./GlobalStyles";
+
+import GenreToggle from "./Components/GenreToggle";
+import { Header } from "../src/Components/Header";
 
 function App() {
 	const genres = ["All", "Documentary", "Comedy", "Horror", "Crime"];
+
+	const genreSelect = (genre) => console.log(genre);
+
 	return (
-		<div className="App">
-			{React.createElement("div", {}, "Hello World!")}
-			<br />
-			<IncrementValue />
-			<br />
-			<SearchBar />
-			<br />
-			<GenreToggle
-				genres={genres}
-				onGenreSelected={(genre) => console.log(genre)}
-			/>
-		</div>
+		<>
+			<GlobalStyle />
+			<Header />
+			<>
+				<GenreToggle genres={genres} onGenreSelected={genreSelect}></GenreToggle>
+				<>Search Results</>
+			</>
+		</>
 	);
 }
 
