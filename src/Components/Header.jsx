@@ -4,13 +4,14 @@ import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import AddMovie from "./AddMovie";
 import SearchBar from "./SearchBar";
+import * as headerImage from "../../public/images/headerbg.jpg";
 
 const HeaderComponent = styled.div`
 	background-color: #232323;
 	height: 35vh;
 	color: #ffffff;
 	font-size: 15px;
-	background-image: url("/images/headerbg.jpg");
+	background-image: url("public/images/headerbg.jpg");
 	background-size: cover;
 	padding: 10px 20px 10px 20px;
 `;
@@ -39,7 +40,7 @@ export default function Header(props) {
 			</>
 			<SearchBarContainer>
 				<HeaderText>Find Your Movie</HeaderText>
-				<SearchBar onSearch={props.onSearch}/>
+				<SearchBar onSearch={props.onSearch} />
 			</SearchBarContainer>
 		</HeaderComponent>
 	);
